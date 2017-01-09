@@ -1,6 +1,6 @@
 'use strict';
 
-const bobTemplate = require('./templates/lists/books.hbs');
+const bobTemplate = require('../templates/lists/books.hbs');
 const section = 'Dystopian Novels';
 const books = [
   { title: 'Animal Farm', author: 'George Orwell' },
