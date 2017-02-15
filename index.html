@@ -41,8 +41,35 @@
           </div>
         </div>
       </div>
+      <div class="modal fade modal-center" id="signInModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-body">
+              <button type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <form id="sign-in">
+                <fieldset>
+                  <h3 class="modal-btn">Sign in!</h3>
+                  <label>
+                    Email
+                      <input class="signInForm" type="text" name="credentials[email]">
+                  </label>
+                  <label>
+                    Password
+                      <input class="signInForm" type="password" name="credentials[password]">
+                  </label>
+                  <input type="submit" id="signInSubmit" class="mdl-btn" name="submit" value="Sign In!">
+                </fieldset>
+              </form>
+            </div>
+
+          </div>
+        </div>
+      </div>
       <button type="button" class="btn" data-toggle="modal" data-target="#signUpModal" id="userSignUp">
         Sign Up!
+      </button>
+      <button type="button" id="userSignIn" class="btn" data-toggle="modal" data-target="#signInModal">
+        Sign In!
       </button>
     </body>
 </html>
