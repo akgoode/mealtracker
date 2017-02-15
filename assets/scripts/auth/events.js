@@ -30,15 +30,15 @@ const onSignIn = function (event) {
     .catch(ui.failure)
     ;
 };
-//
-// const onChangePassword = function (event) {
-//   event.preventDefault();
-//   let data = getFormFields(event.target);
-//   api.changePassword(data)
-//     .then(ui.success)
-//     .catch(ui.failure)
-//     ;
-// };
+
+const onChangePassword = function (event) {
+  event.preventDefault();
+  let data = getFormFields(event.target);
+  api.changePassword(data)
+    .then(ui.success)
+    .catch(ui.failure)
+    ;
+};
 //
 // const onSignOut = function (event) {
 //   event.preventDefault();
@@ -55,7 +55,7 @@ const onSignIn = function (event) {
 const addHandlers = () => {
   $('#sign-up').on('submit', onSignUp);
   $('#sign-in').on('submit', onSignIn);
-  // $('#change-password').on('submit', onChangePassword);
+  $('#change-password').on('submit', onChangePassword);
   // $('#sign-out').on('submit', onSignOut);
 };
 

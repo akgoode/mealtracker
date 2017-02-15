@@ -65,11 +65,37 @@
           </div>
         </div>
       </div>
+      <div class="modal fade modal-center" id="changePasswordModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-body">
+              <button type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <form id="change-password">
+                <fieldset>
+                  <h3>Change Password!</h3>
+                  <label>
+                    Old Password
+                      <input class="changePasswordForm" type="password" name="passwords[old]">
+                  </label>
+                  <label>
+                    New Password
+                      <input class="changePasswordForm" type="password" name="passwords[new]">
+                  </label>
+                  <input type="submit" name="submit" class="mdl-btn" value="Change Password">
+                </fieldset>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
       <button type="button" class="btn" data-toggle="modal" data-target="#signUpModal" id="userSignUp">
         Sign Up!
       </button>
       <button type="button" id="userSignIn" class="btn" data-toggle="modal" data-target="#signInModal">
         Sign In!
+      </button>
+      <button type="button" class="btn" data-toggle="modal" data-target="#changePasswordModal" id="userChangePassword">
+        Change password!
       </button>
     </body>
 </html>
