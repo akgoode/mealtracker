@@ -39,24 +39,24 @@ const onChangePassword = function (event) {
     .catch(ui.failure)
     ;
 };
-//
-// const onSignOut = function (event) {
-//   event.preventDefault();
-//   api.signOut()
-//     .then(() => {
-//       delete store.user;
-//       return store;
-//     })
-//     .then(ui.success)
-//     .catch(ui.failure)
-//     ;
-// };
+
+const onSignOut = function (event) {
+  event.preventDefault();
+  api.signOut()
+    .then(() => {
+      delete store.user;
+      return store;
+    })
+    .then(ui.success)
+    .catch(ui.failure)
+    ;
+};
 
 const addHandlers = () => {
   $('#sign-up').on('submit', onSignUp);
   $('#sign-in').on('submit', onSignIn);
   $('#change-password').on('submit', onChangePassword);
-  // $('#sign-out').on('submit', onSignOut);
+  $('#sign-out').on('click', onSignOut);
 };
 
 module.exports = {
