@@ -111,6 +111,29 @@
           </div>
         </div>
       </div>
+      <div class="modal fade modal-center" id="create-ingredient-modal" tabindex="-1" role="dialog" aria-labelledby="Create Ingredient">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-body">
+              <button type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <form id="create-ingredient-form">
+                <fieldset>
+                  <h3>Create Ingredient</h3>
+                  <label>
+                    Name
+                      <input class="createIngredientForm" type="text" name="ingredient[name]">
+                  </label>
+                  <label>
+                    Unit
+                      <input class="createIngredientForm" type="text" name="ingredient[unit]">
+                  </label>
+                  <input type="submit" name="submit" class="mdl-btn" value="Create!">
+                </fieldset>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
       <button type="button" class="btn" data-toggle="modal" data-target="#signUpModal" id="userSignUp">
         Sign Up!
       </button>
@@ -125,6 +148,9 @@
       </button>
       <button class="btn" type="button" data-toggle="modal" data-target="#create-meal-modal" value="Create-Meal" id="create-meal">
         Create Meal
+      </button>
+      <button class="btn" type="button" data-toggle="modal" data-target="#create-ingredient-modal" value="Create-Ingredient" id="create-ingredient">
+        Create Ingredient
       </button>
       <form id="show-meal">
         <div class="form-group">

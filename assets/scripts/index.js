@@ -4,6 +4,7 @@ const setAPIOrigin = require('../../lib/set-api-origin');
 const config = require('./config');
 const events = require('./auth/events.js');
 const mealEvents = require('./mealsAPI/events.js');
+const ingEvents = require('./ingredientsAPI/events.js');
 
 $(() => {
   setAPIOrigin(location, config);
@@ -16,4 +17,5 @@ $(() => {
 $(() => {
   events.addHandlers();
   mealEvents.addHandlers();
+  ingEvents.addHandlers();
 });
