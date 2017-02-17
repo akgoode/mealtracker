@@ -154,9 +154,9 @@
       </button>
       <form id="show-meal">
         <div class="form-group">
-          <input type="text" name="meal[id]" id="meal-id-form" placeholder="Enter Meal ID">
+          <input type="text" name="meal[id]" placeholder="Enter Meal ID">
         </div>
-        <button type="submit" id="getmeal" class="btn">Get Meal</button>
+        <button type="submit" class="btn">Get Meal</button>
       </form>
       <div class="row show-results">
         <ul>
@@ -178,5 +178,11 @@
           <li>Unit:<span class="searchdata" id="ingredientunit"></span></li>
         </ul>
       </div>
+      <form id="destroy-meal">
+        <div class="form-group">
+          <input type="text" name="meal[id]" id="meal-id-form-destroy" placeholder="Enter Meal ID">
+        </div>
+        <button type="submit" id="destroymeal" class="btn">Delete Meal</button>
+      </form>
     </body>
 </html>

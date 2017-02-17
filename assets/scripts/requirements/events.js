@@ -32,7 +32,7 @@ const onDestroyMeal = function (event) {
   let data = getFormFields(event.target);
   let id = data.meal.id;
   api.destroyMeal(id)
-    .then(ui.destroyMealSuccess)
+    .then(ui.showMealSuccess)
     .catch(ui.failure)
     ;
 };

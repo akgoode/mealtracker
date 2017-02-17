@@ -1,19 +1,19 @@
 'use strict';
 
-const createMealSuccess = () => {
-
-};
-
-const showMealSuccess = (data) => {
-  console.log(data);
-  $('#mealid').text(data.meal.id);
-  $('#mealname').text(data.meal.name);
-  $('#mealinstructions').text(data.meal.instructions);
-};
-
-const destroyMealSuccess = () => {
-  console.log("success");
-};
+// const createMealSuccess = () => {
+//
+// };
+//
+// const showMealSuccess = (data) => {
+//   console.log(data);
+//   $('#mealid').text(data.meal.id);
+//   $('#mealname').text(data.meal.name);
+//   $('#mealinstructions').text(data.meal.instructions);
+// };
+//
+// const destroyMealSuccess = () => {
+//   console.log("success");
+// };
 
 // const signUpSuccess = () => {
 //   $('.signUpForm').val('');
@@ -39,9 +39,9 @@ const failure = (error) => {
 
 module.exports = {
   failure,
-  createMealSuccess,
-  showMealSuccess,
-  destroyMealSuccess,
+  // createMealSuccess,
+  // showMealSuccess,
+  // destroyMealSuccess,
   // changePasswordSuccess,
   // signOutSuccess,
 };

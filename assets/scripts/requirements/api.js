@@ -3,9 +3,9 @@
 const config = require('../config');
 const store = require('../store');
 
-const createMeal = function (data) {
+const createRequirement = function (data) {
   return $.ajax({
-    url: `${config.apiOrigin}/meals`,
+    url: `${config.apiOrigin}/requirements`,
     method: 'POST',
     headers: {
       "Authorization": `Token token=${store.user.token}`
@@ -14,9 +14,9 @@ const createMeal = function (data) {
   });
 };
 
-const showMeal = function (id) {
+const showRequirement = function (id) {
   return $.ajax({
-    url: config.apiOrigin + '/meals/' + id,
+    url: config.apiOrigin + '/requirements/' + id,
     method: 'GET',
     headers: {
       Authorization: `Token token=${store.user.token}`,
@@ -24,9 +24,9 @@ const showMeal = function (id) {
   });
 };
 
-const destroyMeal = function (id) {
+const destroyRequirement = function (id) {
   return $.ajax({
-    url: config.apiOrigin + '/meals/' + id,
+    url: config.apiOrigin + '/requirements/' + id,
     method: 'DELETE',
     headers: {
       Authorization: `Token token=${store.user.token}`,
@@ -56,9 +56,9 @@ const destroyMeal = function (id) {
 // };
 
 module.exports = {
-  createMeal,
-  showMeal,
-  destroyMeal,
+  createRequirement,
+  showRequirement,
+  destroyRequirement,
   // changePassword,
   // signOut,
 };
