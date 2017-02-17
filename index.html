@@ -165,5 +165,18 @@
           <li>Instructions:<span class="searchdata" id="mealinstructions"></span></li>
         </ul>
       </div>
+      <form id="show-ingredient">
+        <div class="form-group">
+          <input type="text" name="ingredient[id]" id="ingredient-id-form" placeholder="Enter Ingredient ID">
+        </div>
+        <button type="submit" id="getingredient" class="btn">Get Ingredient</button>
+      </form>
+      <div class="row show-results">
+        <ul>
+          <li>Ingredient: <span class="searchdata" id="ingredientid"></span></li>
+          <li>Name:<span class="searchdata" id="ingredientname"></span></li>
+          <li>Unit:<span class="searchdata" id="ingredientunit"></span></li>
+        </ul>
+      </div>
     </body>
 </html>

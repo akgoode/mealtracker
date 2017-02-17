@@ -6,9 +6,9 @@ const createIngredientSuccess = () => {
 
 const showIngredientSuccess = (data) => {
   console.log(data);
-  $('#mealid').text(data.meal.id);
-  $('#mealname').text(data.meal.name);
-  $('#mealinstructions').text(data.meal.instructions);
+  $('#ingredientid').text(data.ingredient.id);
+  $('#ingredientname').text(data.ingredient.name);
+  $('#ingredientunit').text(data.ingredient.unit);
 };
 
 // const signUpSuccess = () => {
