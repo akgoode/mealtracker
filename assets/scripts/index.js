@@ -3,6 +3,7 @@
 const setAPIOrigin = require('../../lib/set-api-origin');
 const config = require('./config');
 const events = require('./auth/events.js');
+const mealEvents = require('./mealsAPI/events.js');
 
 $(() => {
   setAPIOrigin(location, config);
@@ -14,4 +15,5 @@ $(() => {
 // use require without a reference to ensure a file is bundled
 $(() => {
   events.addHandlers();
+  mealEvents.addHandlers();
 });

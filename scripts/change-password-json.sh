@@ -4,8 +4,7 @@
 curl "${API}${API_PATH}/${ID}" \
   --include \
   --request PATCH \
-  --header "Content-Type: application/json" \
-  --header "Authorization: Token token=${TOKEN}" \
+  --headers "Content-Type: application/json", "Authorization: Token token=${TOKEN}" \
   --data '{
     "passwords": {
       "old": "'${OLD}'",
