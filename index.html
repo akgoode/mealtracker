@@ -126,5 +126,18 @@
       <button class="btn" type="button" data-toggle="modal" data-target="#create-meal-modal" value="Create-Meal" id="create-meal">
         Create Meal
       </button>
+      <form id="show-meal">
+        <div class="form-group">
+          <input type="text" name="meal[id]" id="meal-id" placeholder="Enter Meal ID">
+        </div>
+        <button type="submit" id="getmeal" class="btn">Get Meal</button>
+      </form>
+      <div class="row show-results">
+        <ul>
+          <li>Meal: <span class="searchdata" id="mealid"></span></li>
+          <li>Name:<span class="searchdata" id="mealname"></span></li>
+          <li>Instructions:<span class="searchdata" id="mealinstructions"></span></li>
+        </ul>
+      </div>
     </body>
 </html>
