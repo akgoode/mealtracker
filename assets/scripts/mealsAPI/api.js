@@ -14,14 +14,16 @@ const createMeal = function (data) {
   });
 };
 
-// const signIn = function (data) {
-//   return $.ajax({
-//     url: config.apiOrigin + '/sign-in',
-//     method: 'POST',
-//     data,
-//   });
-// };
-//
+const showMeal = function (id) {
+  return $.ajax({
+    url: config.apiOrigin + '/meals/' + id,
+    method: 'GET',
+    headers: {
+      Authorization: `Token token=${store.user.token}`,
+    },
+  });
+};
+
 // const changePassword = function (data) {
 //   return $.ajax({
 //     url: `${config.apiOrigin}/change-password/${store.user.id}`,
@@ -45,7 +47,7 @@ const createMeal = function (data) {
 
 module.exports = {
   createMeal,
-  // signIn,
+  showMeal,
   // changePassword,
   // signOut,
 };

@@ -17,21 +17,15 @@ const onCreateMeal = function (event) {
     ;
 };
 
-// const onSignIn = function (event) {
-//   event.preventDefault();
-//   let data = getFormFields(event.target);
-//   api.signIn(data)
-//     .then((response) => {
-//       store.user = response.user;
-//       return store.user;
-//     })
-//     .then(ui.signInSuccess)
-//     .then(() => {
-//       console.log(store);
-//     })
-//     .catch(ui.failure)
-//     ;
-// };
+const onShowMeal = function (event) {
+  event.preventDefault();
+  let data = getFormFields(event.target);
+  let id = data.meal.id;
+  api.showMeal(id)
+    .then(ui.showMealSuccess)
+    .catch(ui.failure)
+    ;
+};
 //
 // const onChangePassword = function (event) {
 //   event.preventDefault();
@@ -56,7 +50,7 @@ const onCreateMeal = function (event) {
 
 const addHandlers = () => {
   $('#create-meal-form').on('submit', onCreateMeal);
-  // $('#sign-in').on('submit', onSignIn);
+  $('#show-meal').on('submit', onShowMeal);
   // $('#change-password').on('submit', onChangePassword);
   // $('#sign-out').on('click', onSignOut);
 };
