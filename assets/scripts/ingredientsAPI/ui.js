@@ -11,6 +11,9 @@ const showIngredientSuccess = (data) => {
   $('#ingredientunit').text(data.ingredient.unit);
 };
 
+const getAllIngredientsSuccess = (data) => {
+  console.log(data);
+};
 // const signUpSuccess = () => {
 //   $('.signUpForm').val('');
 //   $('#signUpModal').modal('hide');
@@ -37,6 +40,7 @@ module.exports = {
   failure,
   createIngredientSuccess,
   showIngredientSuccess,
+  getAllIngredientsSuccess,
   // changePasswordSuccess,
   // signOutSuccess,
 };

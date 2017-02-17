@@ -26,6 +26,14 @@ const onShowIngredient = function (event) {
     ;
 };
 
+const onGetAllIngredients = function (event) {
+  event.preventDefault();
+  api.getAllIngredients()
+    .then(ui.getAllIngredientsSuccess)
+    .catch(ui.failure)
+    ;
+};
+
 // const onChangePassword = function (event) {
 //   event.preventDefault();
 //   let data = getFormFields(event.target);
@@ -50,7 +58,7 @@ const onShowIngredient = function (event) {
 const addHandlers = () => {
   $('#create-ingredient-form').on('submit', onCreateIngredient);
   $('#show-ingredient').on('submit', onShowIngredient);
-
+  $('#indexIngredients').on('click', onGetAllIngredients);
   // $('#change-password').on('submit', onChangePassword);
   // $('#sign-out').on('click', onSignOut);
 };

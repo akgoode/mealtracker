@@ -18,6 +18,12 @@ const showIngredient = function (id) {
   });
 };
 
+const getAllIngredients = function () {
+  return $.ajax({
+    url: config.apiOrigin + '/ingredients/',
+    method: 'GET',
+  });
+};
 // const changePassword = function (data) {
 //   return $.ajax({
 //     url: `${config.apiOrigin}/change-password/${store.user.id}`,
@@ -42,6 +48,7 @@ const showIngredient = function (id) {
 module.exports = {
   createIngredient,
   showIngredient,
+  getAllIngredients,
   // changePassword,
   // signOut,
 };
