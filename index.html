@@ -134,60 +134,72 @@
           </div>
         </div>
       </div>
-      <button type="button" class="btn" data-toggle="modal" data-target="#signUpModal" id="userSignUp">
-        Sign Up!
-      </button>
-      <button type="button" id="userSignIn" class="btn" data-toggle="modal" data-target="#signInModal">
-        Sign In!
-      </button>
-      <button type="button" class="btn hide" data-toggle="modal" data-target="#changePasswordModal" id="userChangePassword">
-        Change password!
-      </button>
-      <button class="btn btn-danger hide" type="button" value="Sign Out" id="sign-out">
-        Sign Out!
-      </button>
-      <button class="btn" type="button" data-toggle="modal" data-target="#create-meal-modal" value="Create-Meal" id="create-meal">
-        Create Meal
-      </button>
-      <button class="btn" type="button" data-toggle="modal" data-target="#create-ingredient-modal" value="Create-Ingredient" id="create-ingredient">
-        Create Ingredient
-      </button>
-      <form id="show-meal">
-        <div class="form-group">
-          <input type="text" name="meal[id]" placeholder="Enter Meal ID">
-        </div>
-        <button type="submit" class="btn">Get Meal</button>
-      </form>
-      <div class="row show-results">
-        <ul>
-          <li>Meal: <span class="searchdata" id="mealid"></span></li>
-          <li>Name:<span class="searchdata" id="mealname"></span></li>
-          <li>Instructions:<span class="searchdata" id="mealinstructions"></span></li>
-        </ul>
+      <div class="user-actions">
+        <button type="button" class="btn" data-toggle="modal" data-target="#signUpModal" id="userSignUp">
+          Sign Up!
+        </button>
+        <button type="button" id="userSignIn" class="btn" data-toggle="modal" data-target="#signInModal">
+          Sign In!
+        </button>
+        <button type="button" class="btn hide" data-toggle="modal" data-target="#changePasswordModal" id="userChangePassword">
+          Change password!
+        </button>
+        <button class="btn btn-danger hide" type="button" value="Sign Out" id="sign-out">
+          Sign Out!
+        </button>
+        <button class="btn" type="button" data-toggle="modal" data-target="#create-meal-modal" value="Create-Meal" id="create-meal">
+          Create Meal
+        </button>
+        <button class="btn" type="button" data-toggle="modal" data-target="#create-ingredient-modal" value="Create-Ingredient" id="create-ingredient">
+          Create Ingredient
+        </button>
       </div>
-      <form id="show-ingredient">
-        <div class="form-group">
-          <input type="text" name="ingredient[id]" id="ingredient-id-form" placeholder="Enter Ingredient ID">
+      <div class="input-fields">
+        <div class="meal-block">
+          <form class="show-results" id="show-meal">
+            <div class="form-group">
+              <input type="text" name="meal[id]" placeholder="Enter Meal ID">
+            </div>
+            <button type="submit" class="btn">Get Meal</button>
+          </form>
+          <div class="row show-results info">
+            <ul>
+              <li>Meal: <span class="searchdata" id="mealid"></span></li>
+              <li>Name:<span class="searchdata" id="mealname"></span></li>
+              <li>Instructions:<span class="searchdata" id="mealinstructions"></span></li>
+            </ul>
+          </div>
         </div>
-        <button type="submit" id="getingredient" class="btn">Get Ingredient</button>
-      </form>
-      <div class="row show-results">
-        <ul>
-          <li>Ingredient: <span class="searchdata" id="ingredientid"></span></li>
-          <li>Name:<span class="searchdata" id="ingredientname"></span></li>
-          <li>Unit:<span class="searchdata" id="ingredientunit"></span></li>
-        </ul>
-      </div>
-      <form id="destroy-meal">
-        <div class="form-group">
-          <input type="text" name="meal[id]" id="meal-id-form-destroy" placeholder="Enter Meal ID">
+        <div class="meal-block">
+          <form class="show-results" id="show-ingredient">
+            <div class="form-group">
+              <input type="text" name="ingredient[id]" id="ingredient-id-form" placeholder="Enter Ingredient ID">
+            </div>
+            <button type="submit" id="getingredient" class="btn">Get Ingredient</button>
+          </form>
+          <div class="row show-results info">
+            <ul>
+              <li>Ingredient: <span class="searchdata" id="ingredientid"></span></li>
+              <li>Name:<span class="searchdata" id="ingredientname"></span></li>
+              <li>Unit:<span class="searchdata" id="ingredientunit"></span></li>
+            </ul>
+          </div>
         </div>
-        <button type="submit" id="destroymeal" class="btn">Delete Meal</button>
-      </form>
-      <button type="button" id="indexIngredients" class="btn">Get All Ingredients</button>
-      <div id="allingredients">
-        <ul id=ingredientslist>
-        </ul>
+        <div class="meal-block">
+          <form class="show-results" id="destroy-meal">
+            <div class="form-group">
+              <input type="text" name="meal[id]" id="meal-id-form-destroy" placeholder="Enter Meal ID">
+            </div>
+            <button type="submit" id="destroymeal" class="btn">Delete Meal</button>
+          </form>
+        </div>
+        <div class="meal-block">
+          <button type="button" id="indexIngredients" class="btn">Get All Ingredients</button>
+          <div id="allingredients">
+            <ul id=ingredientslist>
+            </ul>
+          </div>
+        </div>
       </div>
     </body>
 </html>

@@ -1,7 +1,7 @@
 'use strict';
 
-const createIngredientSuccess = () => {
-
+const createIngredientSuccess = (data) => {
+  console.log(data);
 };
 
 const showIngredientSuccess = (data) => {

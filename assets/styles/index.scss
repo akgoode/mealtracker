@@ -1,2 +1,20 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
+
+.input-fields {
+  display: inline-block;
+  float: left;
+}
+
+.show-results {
+  display: inline-block;
+}
+
+.info {
+  margin: 20px;
+}
+
+.meal-block {
+  display: block;
+  margin: 20px;
+}

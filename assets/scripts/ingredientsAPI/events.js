@@ -11,7 +11,7 @@ const onCreateIngredient = function (event) {
   let data = getFormFields(event.target);
   console.log(data);
   api.createIngredient(data)
-    .then(ui.createMealSuccess)
+    .then(ui.createIngredientSuccess)
     .catch(ui.failure)
     ;
 };

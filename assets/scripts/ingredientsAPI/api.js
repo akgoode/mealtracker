@@ -1,12 +1,15 @@
 'use strict';
 
 const config = require('../config');
-// const store = require('../store');
+const store = require('../store');
 
 const createIngredient = function (data) {
   return $.ajax({
     url: `${config.apiOrigin}/ingredients`,
     method: 'POST',
+    headers: {
+      "Authorization": `Token token=${store.user.token}`
+    },
     data,
   });
 };
