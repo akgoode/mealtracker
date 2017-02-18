@@ -5,6 +5,7 @@ const getFormFields = require(`../../../lib/get-form-fields`);
 const api = require('./api');
 const ui = require('./ui');
 const mealStore = require('../mealsAPI/mealStore.js');
+const ing = require('../ingredientsAPI/api.js');
 
 const onCreateRequirement = function (event) {
   event.preventDefault();
@@ -25,7 +26,11 @@ const onCreateRequirement = function (event) {
 
   api.createRequirement(requirement)
     .then((response) => {
-      ui.createRequirementSuccess(response);
+      ing.showIngredient(id)
+        .then((ingResponse) => {
+          ui.createRequirementSuccess(ingResponse, response);
+        })
+        ;
     })
     .catch(ui.failure)
     ;

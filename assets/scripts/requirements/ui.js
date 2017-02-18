@@ -1,7 +1,9 @@
 'use strict';
 
-const createRequirementSuccess = (data) => {
-  $('#current-ingredients').append("<li>" + data.requirement.ingredient_id + "</li>");
+const createRequirementSuccess = (ingData, reqData) => {
+  let ingredient = ingData.ingredient;
+  let requirement = reqData.requirement;
+  $('#current-ingredients').append("<li>" + requirement.quantity + " " + ingredient.unit + " of " + ingredient.name + "</li>");
 };
 
 // const showMealSuccess = (data) => {

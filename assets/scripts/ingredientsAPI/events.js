@@ -29,9 +29,6 @@ const onShowIngredient = function (event) {
 const onAddIngredient = function (id) {
   api.showIngredient(id)
     .then((response) => {
-      console.log(response);
-    })
-    .then((response) => {
       return response;
     })
     .catch(ui.failure)
