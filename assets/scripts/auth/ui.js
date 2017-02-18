@@ -30,8 +30,6 @@ const signOutSuccess = () => {
   $('#userSignUp').removeClass('hide');
   $('.input-fields').addClass('hide');
   $('.create').addClass('hide');
-
-
 };
 
 const failure = (error) => {

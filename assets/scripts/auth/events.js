@@ -5,6 +5,7 @@ const getFormFields = require(`../../../lib/get-form-fields`);
 const api = require('./api');
 const ui = require('./ui');
 const store = require('../store');
+const mealStore = require('../mealsAPI/mealStore.js');
 
 const onSignUp = function (event) {
   event.preventDefault();
@@ -46,6 +47,10 @@ const onSignOut = function (event) {
     .then(() => {
       delete store.user;
       return store;
+    })
+    .then(() => {
+      delete mealStore.meal;
+      return mealStore;
     })
     .then(ui.signOutSuccess)
     .catch(ui.failure)

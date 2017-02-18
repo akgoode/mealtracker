@@ -40,23 +40,27 @@ const onDestroyMeal = function (event) {
     .catch(ui.failure)
     ;
 };
-// const onSignOut = function (event) {
-//   event.preventDefault();
-//   api.signOut()
-//     .then(() => {
-//       delete store.user;
-//       return store;
-//     })
-//     .then(ui.signOutSuccess)
-//     .catch(ui.failure)
-//     ;
-// };
+
+const onUpdateInstructions = function (event) {
+  event.preventDefault();
+  let data = getFormFields(event.target);
+  let meal = {
+    'meal': {
+      'instructions': data.meal.instructions
+    }
+  };
+  api.update(meal)
+    .then(ui.updateSuccess)
+    .catch(ui.failure)
+    ;
+};
 
 const addHandlers = () => {
   $('#create-meal-form').on('submit', onCreateMeal);
   $('#show-meal').on('submit', onShowMeal);
   $('#destroy-meal').on('submit', onDestroyMeal);
-
+  $('#instructions-form').on('submit', onUpdateInstructions);
+  $('#done-adding').on('click', ui.doneAddingSuccess);
   // $('#change-password').on('submit', onChangePassword);
   // $('#sign-out').on('click', onSignOut);
 };

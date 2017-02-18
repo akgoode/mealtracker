@@ -17,6 +17,15 @@ const showMealSuccess = (data) => {
   $('#mealingredients').text(data.meal.ingredients);
 };
 
+const doneAddingSuccess = () => {
+  $('#add-ing-form').addClass('hide');
+  $('.instructions').removeClass('hide');
+};
+
+const updateSuccess = () => {
+  $('#create-meal-modal').modal('hide');
+};
+
 const destroyMealSuccess = () => {
   console.log("success");
 };
@@ -48,6 +57,8 @@ module.exports = {
   createMealSuccess,
   showMealSuccess,
   destroyMealSuccess,
+  doneAddingSuccess,
+  updateSuccess,
   // changePasswordSuccess,
   // signOutSuccess,
 };

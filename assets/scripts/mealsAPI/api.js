@@ -2,6 +2,7 @@
 
 const config = require('../config');
 const store = require('../store');
+const mealStore = require('./mealStore.js');
 
 const createMeal = function (data) {
   return $.ajax({
@@ -34,6 +35,18 @@ const destroyMeal = function (id) {
   });
 };
 
+const update = function (data) {
+  return $.ajax({
+    url: config.apiOrigin + '/meals/' + mealStore.meal.id,
+    method: 'PATCH',
+    headers: {
+      Authorization: `Token token=${store.user.token}`,
+    },
+    data,
+  });
+};
+
+
 // const changePassword = function (data) {
 //   return $.ajax({
 //     url: `${config.apiOrigin}/change-password/${store.user.id}`,
@@ -59,6 +72,7 @@ module.exports = {
   createMeal,
   showMeal,
   destroyMeal,
+  update,
   // changePassword,
   // signOut,
 };
