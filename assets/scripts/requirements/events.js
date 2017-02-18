@@ -10,7 +10,6 @@ const ing = require('../ingredientsAPI/api.js');
 const onCreateRequirement = function (event) {
   event.preventDefault();
   let data = getFormFields(event.target);
-  console.log(data);
   let id = parseInt(data.requirement.id);
   console.log(id);
   let requirement = {

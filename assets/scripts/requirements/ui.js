@@ -3,6 +3,7 @@
 const createRequirementSuccess = (ingData, reqData) => {
   let ingredient = ingData.ingredient;
   let requirement = reqData.requirement;
+  console.log(requirement);
   $('#current-ingredients').append("<li>" + requirement.quantity + " " + ingredient.unit + " of " + ingredient.name + "</li>");
 };
 

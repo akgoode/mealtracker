@@ -14,6 +14,7 @@ const showMealSuccess = (data) => {
   $('#mealid').text(data.meal.id);
   $('#mealname').text(data.meal.name);
   $('#mealinstructions').text(data.meal.instructions);
+  $('#mealingredients').text(data.meal.ingredients);
 };
 
 const destroyMealSuccess = () => {
