@@ -1,6 +1,8 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 
+$black: #000;
+
 .input-fields {
   display: inline-block;
   float: left;
@@ -17,4 +19,13 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 .meal-block {
   display: block;
   margin: 20px;
+}
+
+.create-meal-form {
+  display: block;
+}
+
+.current-ingredients {
+  border: 1px solid $black;
+  height: 100px;
 }
