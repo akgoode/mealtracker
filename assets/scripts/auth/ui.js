@@ -8,6 +8,8 @@ const signInSuccess = () => {
   $('.signInForm').val('');
   $('#signInModal').modal('hide');
   $('#userSignUp').addClass('hide');
+  $('.input-fields').removeClass('hide');
+  $('.create').removeClass('hide');
 };
 
 const signUpSuccess = () => {
@@ -26,6 +28,10 @@ const signOutSuccess = () => {
   $('#sign-out').addClass('hide');
   $('#signInSubmit').removeClass('hide');
   $('#userSignUp').removeClass('hide');
+  $('.input-fields').addClass('hide');
+  $('.create').addClass('hide');
+
+
 };
 
 const failure = (error) => {

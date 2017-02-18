@@ -100,10 +100,6 @@
                     Name
                       <input class="create-meal-form" type="text" name="meal[name]">
                   </label>
-                  <label>
-                    Instructions
-                      <input class="create-meal-form" type="text" name="meal[instructions]">
-                  </label>
                   <input type="submit" name="submit" class="mdl-btn" value="Create!">
                 </fieldset>
               </form>
@@ -120,6 +116,12 @@
               </form>
               <div class="current-ingredients hide">
                 <ul id="current-ingredients"></ul>
+              </div>
+              <div class="instructions hide">
+                <label>
+                  Instructions
+                    <input class="create-meal-form" type="text" name="meal[instructions]">
+                </label>
               </div>
             </div>
           </div>
@@ -161,14 +163,14 @@
         <button class="btn btn-danger hide" type="button" value="Sign Out" id="sign-out">
           Sign Out!
         </button>
-        <button class="btn" type="button" data-toggle="modal" data-target="#create-meal-modal" value="Create-Meal" id="create-meal">
+        <button class="btn hide create" type="button" data-toggle="modal" data-target="#create-meal-modal" value="Create-Meal" id="create-meal">
           Create Meal
         </button>
-        <button class="btn" type="button" data-toggle="modal" data-target="#create-ingredient-modal" value="Create-Ingredient" id="create-ingredient">
+        <button class="btn hide create" type="button" data-toggle="modal" data-target="#create-ingredient-modal" value="Create-Ingredient" id="create-ingredient">
           Create Ingredient
         </button>
       </div>
-      <div class="input-fields">
+      <div class="input-fields hide">
         <div class="meal-block">
           <form class="show-results" id="show-meal">
             <div class="form-group">

@@ -18,7 +18,7 @@ const getIngredientSuccess = (data) => {
 const getAllIngredientsSuccess = (data) => {
   console.log(data);
   for (let i = 0; i < data.ingredients.length; i++) {
-    $('#ingredientslist').append("<li>" + data.ingredients[i].name + "</li>");
+    $('#ingredientslist').append("<li>" + data.ingredients[i].id + " " + data.ingredients[i].name + "</li>");
   }
 };
 // const signUpSuccess = () => {
