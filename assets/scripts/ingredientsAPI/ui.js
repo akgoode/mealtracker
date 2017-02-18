@@ -11,6 +11,10 @@ const showIngredientSuccess = (data) => {
   $('#ingredientunit').text(data.ingredient.unit);
 };
 
+const getIngredientSuccess = (data) => {
+
+};
+
 const getAllIngredientsSuccess = (data) => {
   console.log(data);
   for (let i = 0; i < data.ingredients.length; i++) {

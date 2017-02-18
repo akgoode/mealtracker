@@ -1,7 +1,12 @@
 'use strict';
 
-const createMealSuccess = () => {
+const mealStore = require('./mealStore.js');
 
+const createMealSuccess = () => {
+  $('.create-meal-title').text(mealStore.meal.name);
+  $('#create-meal-form').addClass('hide');
+  $('#add-ing-form').removeClass('hide');
+  $('.current-ingredients').removeClass('hide');
 };
 
 const showMealSuccess = (data) => {

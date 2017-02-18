@@ -4,14 +4,18 @@ const getFormFields = require(`../../../lib/get-form-fields`);
 
 const api = require('./api');
 const ui = require('./ui');
-const store = require('../store');
+const userStore = require('../store');
+const mealStore = require('./mealStore.js');
 
 const onCreateMeal = function (event) {
   event.preventDefault();
   let data = getFormFields(event.target);
-  data.meal['user_id'] = store.user.id;
-  console.log(data);
+  data.meal['user_id'] = userStore.user.id;
   api.createMeal(data)
+    .then((response) => {
+      mealStore.meal = response.meal;
+      return mealStore.meal;
+    })
     .then(ui.createMealSuccess)
     .catch(ui.failure)
     ;

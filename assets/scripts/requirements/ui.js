@@ -1,9 +1,9 @@
 'use strict';
 
-// const createMealSuccess = () => {
-//
-// };
-//
+const createRequirementSuccess = (data) => {
+  $('#current-ingredients').append("<li>" + data.requirement.ingredient_id + "</li>");
+};
+
 // const showMealSuccess = (data) => {
 //   console.log(data);
 //   $('#mealid').text(data.meal.id);
@@ -39,7 +39,7 @@ const failure = (error) => {
 
 module.exports = {
   failure,
-  // createMealSuccess,
+  createRequirementSuccess,
   // showMealSuccess,
   // destroyMealSuccess,
   // changePasswordSuccess,
