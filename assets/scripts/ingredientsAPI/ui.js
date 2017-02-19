@@ -1,5 +1,7 @@
 'use strict';
 
+const showIngredientsTemplate = require('../templates/ingredients.handlebars');
+
 const createIngredientSuccess = (data) => {
   console.log(data);
 };
@@ -17,9 +19,12 @@ const getIngredientSuccess = (data) => {
 
 const getAllIngredientsSuccess = (data) => {
   console.log(data);
-  for (let i = 0; i < data.ingredients.length; i++) {
-    $('#ingredientslist').append("<li>" + data.ingredients[i].id + " " + data.ingredients[i].name + "</li>");
-  }
+  // for (let i = 0; i < data.ingredients.length; i++) {
+  //   $('#ingredientslist').append("<li>" + data.ingredients[i].id + " " + data.ingredients[i].name + "</li>");
+  // }
+  let showIngredientsHtml = showIngredientsTemplate({ ingredients: data.ingredients });
+  $('#allingredients').append(showIngredientsHtml);
+
 };
 // const signUpSuccess = () => {
 //   $('.signUpForm').val('');

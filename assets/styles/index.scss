@@ -1,7 +1,17 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
+@import url('https://fonts.googleapis.com/css?family=Rancho');
 
+$rancho: Rancho;
 $black: #000;
+
+* {
+  // font-family: $rancho;
+}
+
+.modal {
+  font-size: 20;
+}
 
 .input-fields {
   display: inline-block;
@@ -28,4 +38,7 @@ $black: #000;
 .current-ingredients {
   border: 1px solid $black;
   height: 100px;
+}
+
+#create-meal-modal {
 }
