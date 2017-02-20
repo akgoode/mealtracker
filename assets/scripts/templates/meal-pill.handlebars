@@ -2,5 +2,11 @@
 
   <!-- {{> partial}} -->
 
-<li class="meal-pill" role="presentation" data-id="{{meal.id}}"><a href="#"><h4>{{meal.name}}</h4><button type="button" aria-label="Close"><span aria-hidden="true">&times;</span></button></a></p></li>
+<ul class="meal-pill">
+  <li><h4 data-id="{{meal.id}}">{{meal.id}}{{meal.name}}</h4></li>
+</ul>
+
 {{/each}}
+
+
+<!-- <button type="button" aria-label="Close"><span aria-hidden="true">&times;</span></button> -->

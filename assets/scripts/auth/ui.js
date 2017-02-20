@@ -9,7 +9,7 @@ const signInSuccess = () => {
   // $('#sign-out').removeClass('hide');
   $('.signInForm').val('');
   $('#signInModal').modal('hide');
-  $('.input-fields').removeClass('hide');
+  $('.meals').removeClass('hide');
   // $('.create').removeClass('hide');
   // $('#index-ingredients').removeClass('hide');
   $('.signed-in').removeClass('hide');

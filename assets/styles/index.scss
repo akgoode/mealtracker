@@ -27,8 +27,10 @@ $black: #000;
 }
 
 .meal-block {
-  display: block;
+  border: 1px solid $black;
+  display: inline-block;
   margin: 20px;
+  width: 40%;
 }
 
 .create-meal-form {

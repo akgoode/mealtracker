@@ -29,8 +29,7 @@ const onGetMeals = function (event) {
 
 const onShowMeal = function (event) {
   event.preventDefault();
-  let data = getFormFields(event.target);
-  let id = data.meal.id;
+  let id = event.target.dataset.id;
   api.showMeal(id)
     .then(ui.showMealSuccess)
     .catch(ui.failure)
@@ -70,6 +69,8 @@ const addHandlers = () => {
   $('#done-adding').on('click', ui.doneAddingSuccess);
   $('#close-meal-modal').on('click', ui.resetMealForm);
   $('#index-meals').on('click', onGetMeals);
+  $('#meal-list').on('click', onShowMeal);
+
   // $('#change-password').on('submit', onChangePassword);
   // $('#sign-out').on('click', onSignOut);
 };
@@ -77,4 +78,5 @@ const addHandlers = () => {
 module.exports = {
   addHandlers,
   onDestroyMeal,
+  onShowMeal,
 };

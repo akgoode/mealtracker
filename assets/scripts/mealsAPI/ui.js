@@ -2,6 +2,7 @@
 
 const mealStore = require('./mealStore.js');
 const mealTemplate = require('../templates/meal-pill.handlebars');
+const events = require('./events.js');
 
 const createMealSuccess = () => {
   $('.create-meal-title').text(mealStore.meal.name);
@@ -11,11 +12,18 @@ const createMealSuccess = () => {
 };
 
 const showMealSuccess = (data) => {
-  console.log(data);
-  $('#mealid').text(data.meal.id);
-  $('#mealname').text(data.meal.name);
-  $('#mealinstructions').text(data.meal.instructions);
-  $('#mealingredients').text(data.meal.ingredients);
+  let meal = data.meal;
+  $('.show-meal-title').text(meal.name);
+  for(let i = 0; i < meal.ingredients.length; i++) {
+    let currentIngredient = meal.ingredients[i];
+    for(let j = 0; j < meal.requirements.length; j++) {
+      let currentRequirement = meal.requirements[j];
+      if (currentIngredient.id === currentRequirement.ingredient_id) {
+        $('#show-current-ingredients').append('<li class="ing">' + currentRequirement.quantity + ' ' + currentIngredient.unit + ' of ' + currentIngredient.name + '</li>');
+      }
+    }
+  }
+  $('#show-instructions').text(data.meal.instructions);
 };
 
 const doneAddingSuccess = () => {
@@ -46,29 +54,12 @@ const destroyMealSuccess = () => {
   console.log("success");
 };
 
-const getMealsSuccess = (data) => {
+const getMealsSuccess = function(data) {
+  console.log("success");
   let mealHTML = mealTemplate({ meals: data.meals });
   $('#meal-list').append(mealHTML);
 };
 
-// const signUpSuccess = () => {
-//   $('.signUpForm').val('');
-//   $('#signUpModal').modal('hide');
-// };
-//
-// const changePasswordSuccess = () => {
-//   $('.changePasswordForm').val('');
-//   $('#changePasswordModal').modal('hide');
-// };
-//
-// const signOutSuccess = () => {
-//   $('#userSignIn').removeClass('hide');
-//   $('#userChangePassword').addClass('hide');
-//   $('#sign-out').addClass('hide');
-//   $('#signInSubmit').removeClass('hide');
-//   $('#userSignUp').removeClass('hide');
-// };
-//
 const failure = (error) => {
   console.error(error);
 };
