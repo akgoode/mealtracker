@@ -67,7 +67,8 @@ const onGetAllIngredients = function (event) {
 const addHandlers = () => {
   $('#create-ingredient-form').on('submit', onCreateIngredient);
   $('#show-ingredient').on('submit', onShowIngredient);
-  $('#indexIngredients').on('click', onGetAllIngredients);
+  $('#index-all-ingredients').on('click', onGetAllIngredients);
+  $('#create-ingredient').on('click', ui.newIngredient);
   // $('#change-password').on('submit', onChangePassword);
   // $('#sign-out').on('click', onSignOut);
 };

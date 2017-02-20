@@ -2,8 +2,9 @@
 
 const showIngredientsTemplate = require('../templates/ingredients.handlebars');
 
-const createIngredientSuccess = (data) => {
-  console.log(data);
+const createIngredientSuccess = () => {
+  $('.index-ingredients').removeClass('hide');
+  $('.create-ingredient').addClass('hide');
 };
 
 const showIngredientSuccess = (data) => {
@@ -25,6 +26,11 @@ const getAllIngredientsSuccess = (data) => {
   let showIngredientsHtml = showIngredientsTemplate({ ingredients: data.ingredients });
   $('#allingredients').append(showIngredientsHtml);
 
+};
+
+const newIngredient = () => {
+  $('.index-ingredients').addClass('hide');
+  $('.create-ingredient').removeClass('hide');
 };
 // const signUpSuccess = () => {
 //   $('.signUpForm').val('');
@@ -53,6 +59,7 @@ module.exports = {
   createIngredientSuccess,
   showIngredientSuccess,
   getAllIngredientsSuccess,
+  newIngredient,
   // changePasswordSuccess,
   // signOutSuccess,
 };
