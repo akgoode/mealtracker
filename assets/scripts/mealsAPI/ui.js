@@ -23,6 +23,12 @@ const showMealSuccess = (data) => {
       }
     }
   }
+
+  // for (let i = 0; i < meal.requirements.length; i++) {
+  //   let currentRequirement = meal.requirements[i];
+  //   let ingredient = currentRequirement.ingredient_id;
+  //   $('#show-current-ingredients').append('<li class="ing">' + currentRequirement.quantity + ' ' + meal.ingredients[ingredient] + ' of ' + currentIngredient.name + '</li>');
+  // }
   $('#show-instructions').text(data.meal.instructions);
 };
 
