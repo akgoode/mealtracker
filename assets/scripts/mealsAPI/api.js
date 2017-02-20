@@ -15,6 +15,16 @@ const createMeal = function (data) {
   });
 };
 
+const indexMeals = function () {
+  return $.ajax({
+    url: config.apiOrigin + '/meals/',
+    method: 'GET',
+    headers: {
+      Authorization: `Token token=${store.user.token}`,
+    },
+  });
+};
+
 const showMeal = function (id) {
   return $.ajax({
     url: config.apiOrigin + '/meals/' + id,
@@ -73,6 +83,7 @@ module.exports = {
   showMeal,
   destroyMeal,
   update,
+  indexMeals,
   // changePassword,
   // signOut,
 };

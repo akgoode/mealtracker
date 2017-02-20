@@ -122,7 +122,7 @@
                 <form id="instructions-form">
                   <label>
                     Instructions
-                    <input class="create-meal-form" type="text" name="meal[instructions]">
+                    <textarea class="create-meal-form" name="meal[instructions]" cols="68" rows="6"></textarea>
                     <input type="submit" name="submit" class="btn" id="update-instructions" value="Add">
                   </label>
                 </form>
@@ -183,6 +183,14 @@
         <button type="button" id="index-ingredients" data-toggle="modal" data-target="#ingredient-list" class="btn">Get All Ingredients</button>
       </div>
       <div class="input-fields hide">
+        <div class="meal-block">
+          <button type="button" id="index-meals" class="btn">Show all meals</button>
+          <ul id="meal-list" class="nav nav-pills nav-stacked">
+            <li role="presentation"><a href="#">Home</a></li>
+            <li role="presentation"><a href="#">Profile</a></li>
+            <li role="presentation"><a href="#">Messages</a></li>
+          </ul>
+        </div>
         <div class="meal-block">
           <form class="show-results" id="show-meal">
             <div class="form-group">

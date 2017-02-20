@@ -1,6 +1,7 @@
 'use strict';
 
 const mealStore = require('./mealStore.js');
+const mealTemplate = require('../templates/meal-pill.handlebars');
 
 const createMealSuccess = () => {
   $('.create-meal-title').text(mealStore.meal.name);
@@ -28,6 +29,11 @@ const updateSuccess = () => {
 
 const destroyMealSuccess = () => {
   console.log("success");
+};
+
+const getMealsSuccess = (data) => {
+  let mealHTML = mealTemplate({ meals: data.meals });
+  $('#meal-list').append(mealHTML);
 };
 
 // const signUpSuccess = () => {
@@ -59,6 +65,7 @@ module.exports = {
   destroyMealSuccess,
   doneAddingSuccess,
   updateSuccess,
+  getMealsSuccess,
   // changePasswordSuccess,
   // signOutSuccess,
 };
