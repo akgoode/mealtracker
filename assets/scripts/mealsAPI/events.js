@@ -5,6 +5,7 @@ const getFormFields = require(`../../../lib/get-form-fields`);
 const api = require('./api');
 const ui = require('./ui');
 const mealStore = require('./mealStore.js');
+
 const onCreateMeal = function (event) {
   event.preventDefault();
   let data = getFormFields(event.target);
