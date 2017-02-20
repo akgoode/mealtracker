@@ -3,7 +3,6 @@
   <!-- {{> partial}} -->
 
   <ul data_id="{{ingredient.id}}">
-    <li><h1> <small>Name: {{ingredient.name}}, Unit: {{ingredient.unit}}</small></h1></li>
-    <li><button class="remove" type="button">Remove</button></li>
+    <li><p> <small>Name: {{ingredient.name}}, Unit: {{ingredient.unit}}</small><button type="button" aria-label="Close"><span aria-hidden="true">&times;</span></button></p></li>
   </ul>
 {{/each}}

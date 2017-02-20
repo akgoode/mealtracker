@@ -131,25 +131,33 @@
           </div>
         </div>
       </div>
-      <div class="modal fade modal-center" id="create-ingredient-modal" tabindex="-1" role="dialog" aria-labelledby="Create Ingredient">
+      <div class="modal fade modal-center" id="ingredient-list" tabindex="-1" role="dialog" aria-labelledby="Available Ingredients">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-body">
               <button type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-              <form id="create-ingredient-form">
-                <fieldset>
-                  <h3>Create Ingredient</h3>
-                  <label>
-                    Name
-                      <input class="createIngredientForm" type="text" name="ingredient[name]">
-                  </label>
-                  <label>
-                    Unit
-                      <input class="createIngredientForm" type="text" name="ingredient[unit]">
-                  </label>
-                  <input type="submit" name="submit" class="mdl-btn" value="Create!">
-                </fieldset>
-              </form>
+              <h3>All Available Ingredients</h3>
+              <div class="index-ingredients">
+                <button type="button" id=index-all-ingredients>View Ingredients</button>
+                <div id="allingredients"></div>
+              </div>
+              <button class="btn create" type="button" id="create-ingredient">Create Ingredient</button>
+              <div class="create-ingredient hide">
+                <form id="create-ingredient-form">
+                  <fieldset>
+                    <h3>Create Ingredient</h3>
+                    <label>
+                      Name
+                        <input class="createIngredientForm" type="text" name="ingredient[name]">
+                    </label>
+                    <label>
+                      Unit
+                        <input class="createIngredientForm" type="text" name="ingredient[unit]">
+                    </label>
+                    <input type="submit" name="submit" class="mdl-btn" value="Create!">
+                  </fieldset>
+                </form>
+              </div>
             </div>
           </div>
         </div>
@@ -161,18 +169,18 @@
         <button type="button" id="userSignIn" class="btn" data-toggle="modal" data-target="#signInModal">
           Sign In!
         </button>
-        <button type="button" class="btn hide" data-toggle="modal" data-target="#changePasswordModal" id="userChangePassword">
+      </div>
+      <div class="signed-in hide">
+        <button type="button" class="btn" data-toggle="modal" data-target="#changePasswordModal" id="userChangePassword">
           Change password!
         </button>
-        <button class="btn btn-danger hide" type="button" value="Sign Out" id="sign-out">
+        <button class="btn btn-danger" type="button" value="Sign Out" id="sign-out">
           Sign Out!
         </button>
-        <button class="btn hide create" type="button" data-toggle="modal" data-target="#create-meal-modal" value="Create-Meal" id="create-meal">
+        <button class="btn create" type="button" data-toggle="modal" data-target="#create-meal-modal" value="Create-Meal" id="create-meal">
           Create Meal
         </button>
-        <button class="btn hide create" type="button" data-toggle="modal" data-target="#create-ingredient-modal" value="Create-Ingredient" id="create-ingredient">
-          Create Ingredient
-        </button>
+        <button type="button" id="index-ingredients" data-toggle="modal" data-target="#ingredient-list" class="btn">Get All Ingredients</button>
       </div>
       <div class="input-fields hide">
         <div class="meal-block">
@@ -213,12 +221,6 @@
             </div>
             <button type="submit" id="destroymeal" class="btn">Delete Meal</button>
           </form>
-        </div>
-        <div class="meal-block">
-          <button type="button" id="indexIngredients" class="btn">Get All Ingredients</button>
-          <div id="allingredients">
-
-          </div>
         </div>
       </div>
     </body>

@@ -1,15 +1,18 @@
 'use strict';
 
 const signInSuccess = () => {
-  $('#signInSubmit').addClass('hide');
+  // $('#signInSubmit').addClass('hide');
   $('#userSignIn').addClass('hide');
-  $('#userChangePassword').removeClass('hide');
-  $('#sign-out').removeClass('hide');
+  $('#userSignUp').addClass('hide');
+
+  // $('#userChangePassword').removeClass('hide');
+  // $('#sign-out').removeClass('hide');
   $('.signInForm').val('');
   $('#signInModal').modal('hide');
-  $('#userSignUp').addClass('hide');
   $('.input-fields').removeClass('hide');
-  $('.create').removeClass('hide');
+  // $('.create').removeClass('hide');
+  // $('#index-ingredients').removeClass('hide');
+  $('.signed-in').removeClass('hide');
 };
 
 const signUpSuccess = () => {
@@ -30,6 +33,9 @@ const signOutSuccess = () => {
   $('#userSignUp').removeClass('hide');
   $('.input-fields').addClass('hide');
   $('.create').addClass('hide');
+  $('#index-ingredients').addClass('hide');
+  $('.signed-in').addClass('hide');
+
 };
 
 const failure = (error) => {
