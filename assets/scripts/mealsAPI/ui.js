@@ -23,7 +23,22 @@ const doneAddingSuccess = () => {
   $('.instructions').removeClass('hide');
 };
 
-const updateSuccess = () => {
+const resetMealForm = () => {
+  $('.create-meal-form').val('');
+  $('.new-ing').detach();
+  $('.create-meal-title').text('Create meal');
+  if(!$('#add-ing-form').hasClass('hide')) {
+    $('#add-ing-form').addClass('hide');
+  }
+  if(!$('.instructions').hasClass('hide')) {
+    $('.instructions').addClass('hide');
+  }
+  if(!$('.current-ingredients').hasClass('hide')) {
+    $('.current-ingredients').addClass('hide');
+  }
+  if($('#create-meal-form').hasClass('hide')) {
+    $('#create-meal-form').removeClass('hide');
+  }
   $('#create-meal-modal').modal('hide');
 };
 
@@ -64,7 +79,7 @@ module.exports = {
   showMealSuccess,
   destroyMealSuccess,
   doneAddingSuccess,
-  updateSuccess,
+  resetMealForm,
   getMealsSuccess,
   // changePasswordSuccess,
   // signOutSuccess,
