@@ -40,7 +40,6 @@ const onDestroyMeal = function (event) {
   event.preventDefault();
   let id = event.target.dataset.id;
   api.destroyMeal(id)
-    .then(ui.destroyMealSuccess)
     .then(() => {
       api.indexMeals()
       .then(ui.getMealsSuccess);
@@ -52,16 +51,16 @@ const onDestroyMeal = function (event) {
 const onUpdateInstructions = function (event) {
   event.preventDefault();
   let data = getFormFields(event.target);
-  let meal = {
-    'meal': {
-      'instructions': data.meal.instructions
-    }
-  };
-  api.update(meal)
+  api.update(data)
     .then(ui.resetMealForm)
     .catch(ui.failure)
     ;
 };
+
+// const onUpdateMeal = function (event) {
+//   event.preventDefault();
+//   let
+// };
 
 const addHandlers = () => {
   $('#create-meal-form').on('submit', onCreateMeal);
@@ -73,7 +72,6 @@ const addHandlers = () => {
   $('#index-meals').on('click', onGetMeals);
   $('#meal-list').on('click', '.show-meal', onShowMeal);
   $('#meal-list').on('click', '.remove-meal', onDestroyMeal);
-  $('#hide-meals').on('click', ui.hideMeals);
 };
 
 module.exports = {

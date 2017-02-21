@@ -125,39 +125,8 @@
                   <label>
                     Instructions
                     <textarea class="create-meal-form" name="meal[instructions]" cols="68" rows="6"></textarea>
-                    <input type="submit" name="submit" class="btn" id="update-instructions" value="Add">
+                    <input type="submit" name="submit" class="btn update-instructions" value="Add">
                   </label>
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="modal fade modal-center" id="ingredient-list" tabindex="-1" role="dialog" aria-labelledby="Available Ingredients">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-body">
-              <button type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-              <h3>All Available Ingredients</h3>
-              <button type="button" class="btn" id=index-all-ingredients>View Ingredients</button>
-              <button class="btn create" type="button" id="create-ingredient">Create Ingredient</button>
-              <div class="index-ingredients">
-                <div id="allingredients"></div>
-              </div>
-              <div class="create-ingredient hide">
-                <form id="create-ingredient-form">
-                  <fieldset>
-                    <h3>Create Ingredient</h3>
-                    <label>
-                      Name
-                        <input class="createIngredientForm" type="text" name="ingredient[name]">
-                    </label>
-                    <label>
-                      Unit
-                        <input class="createIngredientForm" type="text" name="ingredient[unit]">
-                    </label>
-                    <input type="submit" name="submit" class="mdl-btn" value="Create!">
-                  </fieldset>
                 </form>
               </div>
             </div>
@@ -185,12 +154,10 @@
         <button type="button" class="btn" data-toggle="modal" data-target="#changePasswordModal" id="userChangePassword">Change password!</button>
         <button class="btn btn-danger" type="button" value="Sign Out" id="sign-out">Sign Out!</button>
         <button class="btn create" type="button" data-toggle="modal" data-target="#create-meal-modal" value="Create-Meal" id="create-meal">Create Meal</button>
-        <button type="button" id="index-ingredients" data-toggle="modal" data-target="#ingredient-list" class="btn">Get All Ingredients</button>
       </div>
       <div class="meals hide">
         <div class="meal-block">
           <button type="button" id="index-meals" class="btn">Show all meals</button>
-          <button type="button" id="hide-meals" class="btn">Hide all meals</button>
           <div id="meal-list" class="nav nav-pills nav-stacked">
           </div>
         </div>

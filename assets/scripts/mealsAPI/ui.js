@@ -24,7 +24,6 @@ const showMealSuccess = (data) => {
   $('#current-meal').detach();
   let meal = data.meal;
   let mealCard = showMealTemplate({meal});
-  // $('.meal-cards').append(mealCard);
   $('#show-meal-body').append(mealCard);
 };
 
@@ -60,10 +59,6 @@ const getMealsSuccess = function(data) {
   $('#meal-list').append(mealHTML);
 };
 
-const destroyMealSuccess = () => {
-  hideMeals();
-};
-
 const failure = (error) => {
   console.error(error);
 };
@@ -72,7 +67,6 @@ module.exports = {
   failure,
   createMealSuccess,
   showMealSuccess,
-  destroyMealSuccess,
   doneAddingSuccess,
   resetMealForm,
   getMealsSuccess,
