@@ -21,14 +21,17 @@ const hideMeals = () => {
 
 const showMealSuccess = (data) => {
   hideMeals();
+  $('#current-meal').detach();
   let meal = data.meal;
   let mealCard = showMealTemplate({meal});
-  $('.meal-cards').append(mealCard);
+  // $('.meal-cards').append(mealCard);
+  $('#show-meal-body').append(mealCard);
 };
 
 const doneAddingSuccess = () => {
   $('#add-ing-form').addClass('hide');
   $('.instructions').removeClass('hide');
+  $('.ingredients').addClass('hide');
 };
 
 const resetMealForm = () => {

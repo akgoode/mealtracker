@@ -4,7 +4,7 @@
 
 <ul class="meal-pill" data-id="{{meal.id}}">
   <li><h4 data-id="{{meal.id}}">{{meal.name}}</h4></li>
-  <li><button data-id="{{meal.id}}" type="button" class="show-meal">Show</button><button data-id="{{meal.id}}" type="button" class="remove-meal">Remove</button></li>
+  <li><button data-id="{{meal.id}}" data-toggle="modal" data-target="#show-meal-modal" type="button" class="show-meal">Show</button><button data-id="{{meal.id}}" type="button" class="remove-meal">Remove</button></li>
 </ul>
 
 {{/each}}
