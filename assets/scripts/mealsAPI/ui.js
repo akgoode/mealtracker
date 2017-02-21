@@ -3,6 +3,7 @@
 const mealStore = require('./mealStore.js');
 const mealTemplate = require('../templates/meal-pill.handlebars');
 const events = require('./events.js');
+const showMealTemplate = require('../templates/meal-card.handlebars');
 
 const createMealSuccess = () => {
   $('.create-meal-title').text(mealStore.meal.name);
@@ -13,23 +14,25 @@ const createMealSuccess = () => {
 
 const showMealSuccess = (data) => {
   let meal = data.meal;
-  $('.show-meal-title').text(meal.name);
-  for(let i = 0; i < meal.ingredients.length; i++) {
-    let currentIngredient = meal.ingredients[i];
-    for(let j = 0; j < meal.requirements.length; j++) {
-      let currentRequirement = meal.requirements[j];
-      if (currentIngredient.id === currentRequirement.ingredient_id) {
-        $('#show-current-ingredients').append('<li class="ing">' + currentRequirement.quantity + ' ' + currentIngredient.unit + ' of ' + currentIngredient.name + '</li>');
-      }
-    }
-  }
+  let mealCard = showMealTemplate({meal});
+  $('.meals').append(mealCard);
+  // $('.show-meal-title').text(meal.name);
+  // for(let i = 0; i < meal.ingredients.length; i++) {
+  //   let currentIngredient = meal.ingredients[i];
+  //   for(let j = 0; j < meal.requirements.length; j++) {
+  //     let currentRequirement = meal.requirements[j];
+  //     if (currentIngredient.id === currentRequirement.ingredient_id) {
+  //       $('#show-current-ingredients').append('<li class="ing">' + currentRequirement.quantity + ' ' + currentIngredient.unit + ' of ' + currentIngredient.name + '</li>');
+  //     }
+  //   }
+  // }
 
   // for (let i = 0; i < meal.requirements.length; i++) {
   //   let currentRequirement = meal.requirements[i];
   //   let ingredient = currentRequirement.ingredient_id;
   //   $('#show-current-ingredients').append('<li class="ing">' + currentRequirement.quantity + ' ' + meal.ingredients[ingredient] + ' of ' + currentIngredient.name + '</li>');
   // }
-  $('#show-instructions').text(data.meal.instructions);
+  // $('#show-instructions').text(data.meal.instructions);
 };
 
 const doneAddingSuccess = () => {

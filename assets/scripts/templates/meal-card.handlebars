@@ -1,0 +1,18 @@
+
+<div class="meal-block">
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <h3 class="show-meal-title">Name: {{meal.name}}</h3>
+      <div class="current-ingredients">
+        <ul id="show-current-ingredients">
+          {{#each meal.ingredients as |ingredient|}}
+            <li><p>{{ingredient.name}} {{ingredient.unit}}</p></li>
+          {{/each}}
+        </ul>
+      </div>
+      <div class="instructions">
+        <p id="show-instructions">{{meal.instructions}}</p>
+      </div>
+    </div>
+  </div>
+</div>
