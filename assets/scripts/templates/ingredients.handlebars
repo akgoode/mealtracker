@@ -2,7 +2,7 @@
 
   <!-- {{> partial}} -->
 
-  <ul data_id="{{ingredient.id}}">
-    <li><p> <small>Name: {{ingredient.name}}, Unit: {{ingredient.unit}}</small><button type="button" aria-label="Close"><span aria-hidden="true">&times;</span></button></p></li>
+  <ul data-id="{{ingredient.id}}">
+    <li><button class="select-ing" data-id="{{ingredient.id}}">{{ingredient.name}}, {{ingredient.unit}}</button></li>
   </ul>
 {{/each}}

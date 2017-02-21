@@ -106,7 +106,7 @@
               <form id="add-ing-form" class="hide">
                 <label>
                   Add Ingredient
-                  <input class="create-meal-form" type="text" name="requirement[id]">
+                  <input class="create-meal-form" id="ing-name" type="text" name="requirement[id]">
                 </label>
                 <label>
                   Quantity
@@ -115,8 +115,10 @@
                 <button type="submit" class="btn">Add</button>
                 <button type="button" class="btn" id="done-adding">Done Adding</button>
               </form>
-              <div class="current-ingredients hide">
+              <div class="list-ingredients hide">
                 <ul id="current-ingredients"></ul>
+              </div>
+              <div class="ingredients hide">
               </div>
               <div class="instructions hide">
                 <form id="instructions-form">
@@ -184,6 +186,8 @@
           </div>
         </div>
         <div class="meal-cards"></div>
+      </div>
+      <div class="testfield">
       </div>
     </body>
 </html>

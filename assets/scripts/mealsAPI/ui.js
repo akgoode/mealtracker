@@ -4,12 +4,15 @@ const mealStore = require('./mealStore.js');
 const mealTemplate = require('../templates/meal-pill.handlebars');
 const events = require('./events.js');
 const showMealTemplate = require('../templates/meal-card.handlebars');
+const ingEvents = require('../ingredientsAPI/events.js');
 
 const createMealSuccess = () => {
   $('.create-meal-title').text(mealStore.meal.name);
   $('#create-meal-form').addClass('hide');
   $('#add-ing-form').removeClass('hide');
-  $('.current-ingredients').removeClass('hide');
+  $('.list-ingredients').removeClass('hide');
+  $('.ingredients').removeClass('hide');
+  ingEvents.getAllIngredients();
 };
 
 const hideMeals = () => {

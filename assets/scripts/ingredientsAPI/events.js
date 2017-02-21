@@ -18,10 +18,9 @@ const onCreateIngredient = function (event) {
 
 const onShowIngredient = function (event) {
   event.preventDefault();
-  let data = getFormFields(event.target);
-  let id = data.ingredient.id;
+  let id = event.target.dataset.id;
   api.showIngredient(id)
-    .then(ui.showIngredientSuccess)
+    .then(ui.stageIngredient)
     .catch(ui.failure)
     ;
 };
@@ -37,6 +36,13 @@ const onAddIngredient = function (id) {
 
 const onGetAllIngredients = function (event) {
   event.preventDefault();
+  api.getAllIngredients()
+    .then(ui.getAllIngredientsSuccess)
+    .catch(ui.failure)
+    ;
+};
+
+const getAllIngredients = function () {
   api.getAllIngredients()
     .then(ui.getAllIngredientsSuccess)
     .catch(ui.failure)
@@ -69,11 +75,12 @@ const addHandlers = () => {
   $('#show-ingredient').on('submit', onShowIngredient);
   $('#index-all-ingredients').on('click', onGetAllIngredients);
   $('#create-ingredient').on('click', ui.newIngredient);
-  // $('#change-password').on('submit', onChangePassword);
+  $('.ingredients').on('click', '.select-ing', onShowIngredient);
   // $('#sign-out').on('click', onSignOut);
 };
 
 module.exports = {
   addHandlers,
   onAddIngredient,
+  getAllIngredients,
 };

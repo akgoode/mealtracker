@@ -37,7 +37,15 @@ $black: #000;
   display: block;
 }
 
-.current-ingredients {
+.list-ingredients {
   border: 1px solid $black;
   height: auto;
+  width: 80%;
+}
+
+.ingredients {
+  border: 1px solid $black;
+  height: 200px;
+  overflow: scroll;
+  width: 80%;
 }

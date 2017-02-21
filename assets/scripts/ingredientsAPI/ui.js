@@ -24,7 +24,7 @@ const getAllIngredientsSuccess = (data) => {
   //   $('#ingredientslist').append("<li>" + data.ingredients[i].id + " " + data.ingredients[i].name + "</li>");
   // }
   let showIngredientsHtml = showIngredientsTemplate({ ingredients: data.ingredients });
-  $('#allingredients').append(showIngredientsHtml);
+  $('.ingredients').append(showIngredientsHtml);
 
 };
 
@@ -32,24 +32,12 @@ const newIngredient = () => {
   $('.index-ingredients').addClass('hide');
   $('.create-ingredient').removeClass('hide');
 };
-// const signUpSuccess = () => {
-//   $('.signUpForm').val('');
-//   $('#signUpModal').modal('hide');
-// };
-//
-// const changePasswordSuccess = () => {
-//   $('.changePasswordForm').val('');
-//   $('#changePasswordModal').modal('hide');
-// };
-//
-// const signOutSuccess = () => {
-//   $('#userSignIn').removeClass('hide');
-//   $('#userChangePassword').addClass('hide');
-//   $('#sign-out').addClass('hide');
-//   $('#signInSubmit').removeClass('hide');
-//   $('#userSignUp').removeClass('hide');
-// };
-//
+
+const stageIngredient = (data) => {
+  let ingredient = data.ingredient;
+  $('#ing-name').val(ingredient.id);
+};
+
 const failure = (error) => {
   console.error(error);
 };
@@ -60,6 +48,7 @@ module.exports = {
   showIngredientSuccess,
   getAllIngredientsSuccess,
   newIngredient,
+  stageIngredient,
   // changePasswordSuccess,
   // signOutSuccess,
 };

@@ -1,9 +1,10 @@
 
-<div class="meal-block">
+<div>
   <div class="panel panel-default">
     <div class="panel-body">
       <h3 class="show-meal-title">Name: {{meal.name}}</h3>
       <div class="current-ingredients">
+        <h4>Ingredients</h4>
         <ul id="show-current-ingredients">
           {{#each meal.ings as |ingredient|}}
             <li><p>{{ingredient.quantity}} {{ingredient.unit}} of {{ingredient.name}}</p></li>
@@ -11,6 +12,7 @@
         </ul>
       </div>
       <div class="instructions">
+        <h4>Instructions</h4>
         <p id="show-instructions">{{meal.instructions}}</p>
       </div>
     </div>
