@@ -12,7 +12,12 @@ const createMealSuccess = () => {
   $('.current-ingredients').removeClass('hide');
 };
 
+const hideMeals = () => {
+  $('.meal-cards').empty();
+};
+
 const showMealSuccess = (data) => {
+  hideMeals();
   let meal = data.meal;
   let mealCard = showMealTemplate({meal});
   $('.meal-cards').append(mealCard);
@@ -42,10 +47,6 @@ const resetMealForm = () => {
   $('#create-meal-modal').modal('hide');
 };
 
-const destroyMealSuccess = () => {
-  console.log("success");
-};
-
 const getMealsSuccess = function(data) {
   console.log("success");
   $('.meal-pill').detach();
@@ -53,8 +54,8 @@ const getMealsSuccess = function(data) {
   $('#meal-list').append(mealHTML);
 };
 
-const hideMeals = () => {
-  $('.meal-cards').empty();
+const destroyMealSuccess = () => {
+  hideMeals();
 };
 
 const failure = (error) => {

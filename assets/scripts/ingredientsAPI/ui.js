@@ -14,9 +14,9 @@ const showIngredientSuccess = (data) => {
   $('#ingredientunit').text(data.ingredient.unit);
 };
 
-const getIngredientSuccess = (data) => {
-
-};
+// const getIngredientSuccess = (data) => {
+//
+// };
 
 const getAllIngredientsSuccess = (data) => {
   console.log(data);
