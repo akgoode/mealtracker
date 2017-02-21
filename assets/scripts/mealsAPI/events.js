@@ -38,10 +38,11 @@ const onShowMeal = function (event) {
 
 const onDestroyMeal = function (event) {
   event.preventDefault();
-  api.destroyMeal(event.target.data_id)
+  let id = event.target.dataset.id;
+  api.destroyMeal(id)
     .then(ui.destroyMealSuccess)
     .then((event) => {
-      $(event.target.data_id).remove();
+      // $(id).remove();
     })
     .catch(ui.failure)
     ;
@@ -69,8 +70,9 @@ const addHandlers = () => {
   $('#done-adding').on('click', ui.doneAddingSuccess);
   $('#close-meal-modal').on('click', ui.resetMealForm);
   $('#index-meals').on('click', onGetMeals);
-  $('#meal-list').on('click', onShowMeal);
-
+  $('#meal-list').on('click', '.show-meal', onShowMeal);
+  $('#meal-list').on('click', '.remove-meal', onDestroyMeal);
+  $('#hide-meals').on('click', ui.hideMeals);
   // $('#change-password').on('submit', onChangePassword);
   // $('#sign-out').on('click', onSignOut);
 };

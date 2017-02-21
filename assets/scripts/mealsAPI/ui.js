@@ -15,24 +15,7 @@ const createMealSuccess = () => {
 const showMealSuccess = (data) => {
   let meal = data.meal;
   let mealCard = showMealTemplate({meal});
-  $('.meals').append(mealCard);
-  // $('.show-meal-title').text(meal.name);
-  // for(let i = 0; i < meal.ingredients.length; i++) {
-  //   let currentIngredient = meal.ingredients[i];
-  //   for(let j = 0; j < meal.requirements.length; j++) {
-  //     let currentRequirement = meal.requirements[j];
-  //     if (currentIngredient.id === currentRequirement.ingredient_id) {
-  //       $('#show-current-ingredients').append('<li class="ing">' + currentRequirement.quantity + ' ' + currentIngredient.unit + ' of ' + currentIngredient.name + '</li>');
-  //     }
-  //   }
-  // }
-
-  // for (let i = 0; i < meal.requirements.length; i++) {
-  //   let currentRequirement = meal.requirements[i];
-  //   let ingredient = currentRequirement.ingredient_id;
-  //   $('#show-current-ingredients').append('<li class="ing">' + currentRequirement.quantity + ' ' + meal.ingredients[ingredient] + ' of ' + currentIngredient.name + '</li>');
-  // }
-  // $('#show-instructions').text(data.meal.instructions);
+  $('.meal-cards').append(mealCard);
 };
 
 const doneAddingSuccess = () => {
@@ -65,8 +48,13 @@ const destroyMealSuccess = () => {
 
 const getMealsSuccess = function(data) {
   console.log("success");
+  $('.meal-pill').detach();
   let mealHTML = mealTemplate({ meals: data.meals });
   $('#meal-list').append(mealHTML);
+};
+
+const hideMeals = () => {
+  $('.meal-cards').empty();
 };
 
 const failure = (error) => {
@@ -81,6 +69,7 @@ module.exports = {
   doneAddingSuccess,
   resetMealForm,
   getMealsSuccess,
+  hideMeals,
   // changePasswordSuccess,
   // signOutSuccess,
 };
