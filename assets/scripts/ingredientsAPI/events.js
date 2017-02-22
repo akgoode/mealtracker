@@ -9,7 +9,6 @@ const ui = require('./ui');
 const onCreateIngredient = function (event) {
   event.preventDefault();
   let data = getFormFields(event.target);
-  console.log(data);
   api.createIngredient(data)
     .then(ui.createIngredientSuccess)
     .catch(ui.failure)

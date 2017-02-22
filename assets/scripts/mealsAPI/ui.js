@@ -12,6 +12,7 @@ const createMealSuccess = () => {
   $('.list-ingredients').removeClass('hide');
   $('.ingredients').removeClass('hide');
   ingEvents.getAllIngredients();
+  $('#status-bar').text(mealStore.meal.name + ' successfully created');
 };
 
 const hideMeals = () => {
@@ -51,16 +52,19 @@ const resetMealForm = () => {
     $('#create-meal-form').removeClass('hide');
   }
   $('#create-meal-modal').modal('hide');
+  $('#status-bar').text('');
 };
 
 const getMealsSuccess = function(data) {
   $('.meal-pill').detach();
   let mealHTML = mealTemplate({ meals: data.meals });
   $('#meal-list').append(mealHTML);
+  $('#status-bar').text('Showing ' + data.meals.length + ' meals');
 };
 
-const failure = (error) => {
-  console.error(error);
+const failure = () => {
+  $('#status-bar').text('Meal action failed.');
+
 };
 
 module.exports = {

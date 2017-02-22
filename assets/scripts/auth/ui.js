@@ -7,16 +7,19 @@ const signInSuccess = () => {
   $('#signInModal').modal('hide');
   $('.meals').removeClass('hide');
   $('.signed-in').removeClass('hide');
+  $('#status-bar').text('Sign in successful!');
 };
 
 const signUpSuccess = () => {
   $('.signUpForm').val('');
   $('#signUpModal').modal('hide');
+  $('#status-bar').text('Sign up successful! Please sign in.');
 };
 
 const changePasswordSuccess = () => {
   $('.changePasswordForm').val('');
   $('#changePasswordModal').modal('hide');
+  $('#status-bar').text('Change password successful');
 };
 
 const hideMeals = () => {
@@ -30,10 +33,29 @@ const signOutSuccess = () => {
   $('#userSignUp').removeClass('hide');
   $('.signed-in').addClass('hide');
   $('.meals').addClass('hide');
+  $('#status-bar').text('Sign out successful!');
 };
 
-const failure = (error) => {
-  console.error(error);
+const failure = () => {
+  $('#status-bar').text('There was an error! Please try again.');
+};
+
+const signInFailure = () => {
+  $('#signInModal').modal('hide');
+  $('.signInForm').val('');
+  $('#status-bar').text('Sign in failed! Please try again.');
+};
+
+const signUpFailure = () => {
+  $('#signUpModal').modal('hide');
+  $('.signUpForm').val('');
+  $('#status-bar').text('Sign up failed! Please try again.');
+};
+
+const changePasswordFailure = () => {
+  $('#changePasswordModal').modal('hide');
+  $('.changePasswordForm').val('');
+  $('#status-bar').text('Change password failed! Please try again.');
 };
 
 module.exports = {
@@ -42,4 +64,7 @@ module.exports = {
   signUpSuccess,
   changePasswordSuccess,
   signOutSuccess,
+  signInFailure,
+  signUpFailure,
+  changePasswordFailure,
 };

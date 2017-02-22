@@ -106,7 +106,7 @@
               <form id="add-ing-form" class="hide">
                 <label>
                   Add Ingredient
-                  <input class="create-meal-form" id="ing-name" type="text" name="requirement[id]">
+                  <input class="create-meal-form" id="ing-name" type="text" name="requirement[id]" readonly>
                 </label>
                 <label>
                   Quantity
@@ -178,6 +178,9 @@
         <button class="btn btn-danger" type="button" value="Sign Out" id="sign-out">Sign Out!</button>
         <button class="btn create" type="button" data-toggle="modal" data-target="#create-meal-modal" value="Create-Meal" id="create-meal">Create Meal</button>
         <button class="btn create" type="button" data-toggle="modal" data-target="#ingredients-modal" value="Create Ingredient" id="create-ingredient-button">Create Ingredient</button>
+      </div>
+      <div class="status-bar">
+        <h3 id="status-bar"></h3>
       </div>
       <div class="meals hide">
         <div class="meal-block">

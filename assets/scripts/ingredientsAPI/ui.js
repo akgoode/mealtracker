@@ -2,9 +2,10 @@
 
 const showIngredientsTemplate = require('../templates/ingredients.handlebars');
 
-const createIngredientSuccess = () => {
+const createIngredientSuccess = (data) => {
   $('#ingredients-modal').modal('hide');
   $('.ingredient-form').val('');
+  $('#status-bar').text(data.ingredient.name + ' successfully added');
 };
 
 const showIngredientSuccess = (data) => {
@@ -19,18 +20,13 @@ const getAllIngredientsSuccess = (data) => {
 
 };
 
-const newIngredient = () => {
-  $('.index-ingredients').addClass('hide');
-  $('.create-ingredient').removeClass('hide');
-};
-
 const stageIngredient = (data) => {
   let ingredient = data.ingredient;
   $('#ing-name').val(ingredient.id);
 };
 
-const failure = (error) => {
-  console.error(error);
+const failure = () => {
+  $('#status-bar').text('Ingredient action failed.');
 };
 
 module.exports = {
@@ -38,6 +34,5 @@ module.exports = {
   createIngredientSuccess,
   showIngredientSuccess,
   getAllIngredientsSuccess,
-  newIngredient,
   stageIngredient,
 };

@@ -48,3 +48,10 @@ $black: #000;
   overflow: scroll;
   width: 80%;
 }
+
+.status-bar {
+  border: 1px solid $black;
+  height: 75px;
+  margin: 25px;
+  width: 40%;
+}

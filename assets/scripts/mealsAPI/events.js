@@ -15,6 +15,10 @@ const onCreateMeal = function (event) {
       return mealStore.meal;
     })
     .then(ui.createMealSuccess)
+    .then(() => {
+      delete mealStore.meal;
+      return mealStore;
+    })
     .catch(ui.failure)
     ;
 };
@@ -59,11 +63,6 @@ const onUpdateInstructions = function (event) {
     .catch(ui.failure)
     ;
 };
-
-// const onUpdateMeal = function (event) {
-//   event.preventDefault();
-//   let
-// };
 
 const addHandlers = () => {
   $('#create-meal-form').on('submit', onCreateMeal);
