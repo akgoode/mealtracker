@@ -1,35 +1,25 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 @import url('https://fonts.googleapis.com/css?family=Rancho');
+@import url('https://fonts.googleapis.com/css?family=Adamina');
 
 $rancho: Rancho;
 $black: #000;
+$white: #fff;
+$main-font: Adamina;
+$background-color: #f2d994;
 
 * {
-  // font-family: $rancho;
+  font-family: $main-font;
+  font-size: 20px;
+}
+
+body {
+  background: $background-color;
 }
 
 .modal {
   font-size: 20;
-}
-
-.input-fields {
-  display: inline-block;
-  float: left;
-}
-
-.show-results {
-  display: inline-block;
-}
-
-.info {
-  margin: 20px;
-}
-
-.meal-block {
-  display: inline-block;
-  margin: 20px;
-  width: 40%;
 }
 
 .create-meal-form {
@@ -39,19 +29,51 @@ $black: #000;
 .list-ingredients {
   border: 1px solid $black;
   height: auto;
-  width: 80%;
 }
 
 .ingredients {
   border: 1px solid $black;
   height: 200px;
   overflow: scroll;
-  width: 80%;
 }
 
 .status-bar {
+  height: 50px;
+  // margin: 25px;
+  text-align: center;
+}
+
+.meal-pill {
+  background: $white;
   border: 1px solid $black;
-  height: 75px;
-  margin: 25px;
-  width: 40%;
+  border-radius: 10px;
+  margin: 5px 100px;
+  padding-bottom: 10px;
+  text-align: center;
+}
+
+.btn {
+  margin: 3px;
+}
+
+.page-title {
+  font-family: $main-font;
+  font-size: 60px;
+  text-align: center;
+}
+
+.meals {
+  text-align: center;
+}
+
+.nav {
+  text-align: center;
+}
+
+.signed-in {
+  text-align: center;
+}
+
+.user-actions {
+  text-align: center;
 }

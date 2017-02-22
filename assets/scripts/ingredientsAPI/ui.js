@@ -23,6 +23,7 @@ const getAllIngredientsSuccess = (data) => {
 const stageIngredient = (data) => {
   let ingredient = data.ingredient;
   $('#ing-name').val(ingredient.id);
+  $('#ing-quant').val('');
 };
 
 const failure = () => {
