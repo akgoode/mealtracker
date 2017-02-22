@@ -2,7 +2,6 @@
 
 const mealStore = require('./mealStore.js');
 const mealTemplate = require('../templates/meal-pill.handlebars');
-const events = require('./events.js');
 const showMealTemplate = require('../templates/meal-card.handlebars');
 const ingEvents = require('../ingredientsAPI/events.js');
 
@@ -16,11 +15,10 @@ const createMealSuccess = () => {
 };
 
 const hideMeals = () => {
-  $('.meal-cards').empty();
+  $('.meal-pill').detach();
 };
 
 const showMealSuccess = (data) => {
-  hideMeals();
   $('#current-meal').detach();
   let meal = data.meal;
   let mealCard = showMealTemplate({meal});

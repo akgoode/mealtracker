@@ -25,17 +25,17 @@ const changePasswordSuccess = () => {
   $('#changePasswordModal').modal('hide');
 };
 
+const hideMeals = () => {
+  $('.meal-pill').detach();
+};
+
 const signOutSuccess = () => {
+  hideMeals();
   $('#userSignIn').removeClass('hide');
-  $('#userChangePassword').addClass('hide');
-  $('#sign-out').addClass('hide');
   $('#signInSubmit').removeClass('hide');
   $('#userSignUp').removeClass('hide');
-  $('.input-fields').addClass('hide');
-  $('.create').addClass('hide');
-  $('#index-ingredients').addClass('hide');
   $('.signed-in').addClass('hide');
-
+  $('.meals').addClass('hide');
 };
 
 const failure = (error) => {
