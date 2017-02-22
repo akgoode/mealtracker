@@ -11,7 +11,6 @@ const onCreateRequirement = function (event) {
   event.preventDefault();
   let data = getFormFields(event.target);
   let id = parseInt(data.requirement.id);
-  console.log(id);
   let requirement = {
     'requirement': {
       'ingredient_id': id,

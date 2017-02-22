@@ -41,8 +41,11 @@ const resetMealForm = () => {
   if(!$('.instructions').hasClass('hide')) {
     $('.instructions').addClass('hide');
   }
-  if(!$('.current-ingredients').hasClass('hide')) {
-    $('.current-ingredients').addClass('hide');
+  if(!$('.list-ingredients-ingredients').hasClass('hide')) {
+    $('.list-ingredients').addClass('hide');
+  }
+  if(!$('.ingredients').hasClass('hide')) {
+    $('.ingredients').addClass('hide');
   }
   if($('#create-meal-form').hasClass('hide')) {
     $('#create-meal-form').removeClass('hide');

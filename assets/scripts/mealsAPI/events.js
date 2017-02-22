@@ -53,6 +53,9 @@ const onUpdateInstructions = function (event) {
   let data = getFormFields(event.target);
   api.update(data)
     .then(ui.resetMealForm)
+    .then(() => {
+      delete mealStore.meal;
+    })
     .catch(ui.failure)
     ;
 };
