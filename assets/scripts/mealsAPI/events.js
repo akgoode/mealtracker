@@ -15,10 +15,6 @@ const onCreateMeal = function (event) {
       return mealStore.meal;
     })
     .then(ui.createMealSuccess)
-    .then(() => {
-      delete mealStore.meal;
-      return mealStore;
-    })
     .catch(ui.failure)
     ;
 };
