@@ -142,6 +142,29 @@
           </div>
         </div>
       </div>
+      <div class="modal fade modal-center" id="ingredients-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-body" id="ingredients-body">
+              <button type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <form id="create-ingredient-form">
+                <fieldset>
+                  <h3 class="modal-btn">Add Ingredient</h3>
+                  <label>
+                    Name
+                      <input class="ingredient-form" type="text" name="ingredient[name]">
+                  </label>
+                  <label>
+                    Unit
+                      <input class="ingredient-form" type="text" name="ingredient[unit]">
+                  </label>
+                  <input type="submit" id="ingredient-submit" class="mdl-btn" name="submit" value="Create!">
+                </fieldset>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
       <div class="user-actions">
         <button type="button" class="btn" data-toggle="modal" data-target="#signUpModal" id="userSignUp">
           Sign Up!
@@ -154,6 +177,7 @@
         <button type="button" class="btn" data-toggle="modal" data-target="#changePasswordModal" id="userChangePassword">Change password!</button>
         <button class="btn btn-danger" type="button" value="Sign Out" id="sign-out">Sign Out!</button>
         <button class="btn create" type="button" data-toggle="modal" data-target="#create-meal-modal" value="Create-Meal" id="create-meal">Create Meal</button>
+        <button class="btn create" type="button" data-toggle="modal" data-target="#ingredients-modal" value="Create Ingredient" id="create-ingredient-button">Create Ingredient</button>
       </div>
       <div class="meals hide">
         <div class="meal-block">

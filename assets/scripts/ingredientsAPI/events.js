@@ -49,34 +49,11 @@ const getAllIngredients = function () {
     ;
 };
 
-// const onChangePassword = function (event) {
-//   event.preventDefault();
-//   let data = getFormFields(event.target);
-//   api.changePassword(data)
-//     .then(ui.changePasswordSuccess)
-//     .catch(ui.failure)
-//     ;
-// };
-//
-// const onSignOut = function (event) {
-//   event.preventDefault();
-//   api.signOut()
-//     .then(() => {
-//       delete store.user;
-//       return store;
-//     })
-//     .then(ui.signOutSuccess)
-//     .catch(ui.failure)
-//     ;
-// };
-
 const addHandlers = () => {
   $('#create-ingredient-form').on('submit', onCreateIngredient);
   $('#show-ingredient').on('submit', onShowIngredient);
   $('#index-all-ingredients').on('click', onGetAllIngredients);
-  $('#create-ingredient').on('click', ui.newIngredient);
   $('.ingredients').on('click', '.select-ing', onShowIngredient);
-  // $('#sign-out').on('click', onSignOut);
 };
 
 module.exports = {

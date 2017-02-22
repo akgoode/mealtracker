@@ -54,7 +54,6 @@ const resetMealForm = () => {
 };
 
 const getMealsSuccess = function(data) {
-  console.log("success");
   $('.meal-pill').detach();
   let mealHTML = mealTemplate({ meals: data.meals });
   $('#meal-list').append(mealHTML);
@@ -72,6 +71,4 @@ module.exports = {
   resetMealForm,
   getMealsSuccess,
   hideMeals,
-  // changePasswordSuccess,
-  // signOutSuccess,
 };

@@ -1,17 +1,11 @@
 'use strict';
 
 const signInSuccess = () => {
-  // $('#signInSubmit').addClass('hide');
   $('#userSignIn').addClass('hide');
   $('#userSignUp').addClass('hide');
-
-  // $('#userChangePassword').removeClass('hide');
-  // $('#sign-out').removeClass('hide');
   $('.signInForm').val('');
   $('#signInModal').modal('hide');
   $('.meals').removeClass('hide');
-  // $('.create').removeClass('hide');
-  // $('#index-ingredients').removeClass('hide');
   $('.signed-in').removeClass('hide');
 };
 
