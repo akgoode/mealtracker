@@ -11,27 +11,29 @@ const onCreateRequirement = function (event) {
   event.preventDefault();
   let data = getFormFields(event.target);
   let id = parseInt(data.requirement.id);
-  let requirement = {
-    'requirement': {
-      'ingredient_id': id,
-      'meal_id': mealStore.meal.id,
-      'quantity': parseInt(data.requirement.quantity)
-    }
-  };
-  // mealIng.requirement['ingredient_id'] = ingredient;
-  // mealIng.requirement['meal_id'] = meal.meal.id;
-  // mealIng.requirement['quantity'] = data.requirement.quantity;
+  console.log(data.requirement.quantity);
+  if (!isNaN(data.requirement.quantity) && data.requirement.quantity !== '0' && data.requirement.quantity !== '') {
+    let requirement = {
+      'requirement': {
+        'ingredient_id': id,
+        'meal_id': mealStore.meal.id,
+        'quantity': parseInt(data.requirement.quantity)
+      }
+    };
 
-  api.createRequirement(requirement)
-    .then((response) => {
-      ing.showIngredient(id)
-        .then((ingResponse) => {
-          ui.createRequirementSuccess(ingResponse, response);
-        })
-        ;
-    })
-    .catch(ui.failure)
-    ;
+    api.createRequirement(requirement)
+      .then((response) => {
+        ing.showIngredient(id)
+          .then((ingResponse) => {
+            ui.createRequirementSuccess(ingResponse, response);
+          })
+          ;
+      })
+      .catch(ui.failure)
+      ;
+  } else {
+    ui.createRequirementFailure();
+  }
 };
 
 // const onSignOut = function (event) {

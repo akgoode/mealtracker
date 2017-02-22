@@ -30,10 +30,17 @@ const failure = () => {
   $('#status-bar').text('Ingredient action failed.');
 };
 
+const createIngredientFailure = () => {
+  $('#ingredients-modal').modal('hide');
+  $('.ingredient-form').val('');
+  $('#status-bar').text('Create ingredient failed.');
+};
+
 module.exports = {
   failure,
   createIngredientSuccess,
   showIngredientSuccess,
   getAllIngredientsSuccess,
   stageIngredient,
+  createIngredientFailure,
 };
