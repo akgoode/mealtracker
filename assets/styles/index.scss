@@ -26,8 +26,11 @@ body {
   display: block;
 }
 
+#create-meal-modal {
+  height: auto;
+}
+
 .list-ingredients {
-  border: 1px solid $black;
   height: auto;
 }
 
@@ -76,4 +79,8 @@ body {
 
 .user-actions {
   text-align: center;
+}
+
+#instructions-text {
+  width: 100%;
 }
