@@ -11,7 +11,6 @@ const onCreateRequirement = function (event) {
   event.preventDefault();
   let data = getFormFields(event.target);
   let id = parseInt(data.requirement.id);
-  console.log(data.requirement.quantity);
   if (!isNaN(data.requirement.quantity) && data.requirement.quantity !== '0' && data.requirement.quantity !== '') {
     let requirement = {
       'requirement': {
@@ -35,18 +34,6 @@ const onCreateRequirement = function (event) {
     ui.createRequirementFailure();
   }
 };
-
-// const onSignOut = function (event) {
-//   event.preventDefault();
-//   api.signOut()
-//     .then(() => {
-//       delete store.user;
-//       return store;
-//     })
-//     .then(ui.signOutSuccess)
-//     .catch(ui.failure)
-//     ;
-// };
 
 const addHandlers = () => {
   $('#add-ing-form').on('submit', onCreateRequirement);
