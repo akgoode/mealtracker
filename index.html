@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>Meal Tracker</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags unless you know what you are doing -->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+      <!-- Do not add `script` tags unless you know what you are doing -->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    </head>
+    <body class="container-fluid">
+      <h1 class="page-title">Meal Tracker</h1>
+
+      <div class="modal fade modal-center" id="signUpModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-body">
+              <button type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <form id="sign-up">
+                <fieldset>
+                  <h3>Sign up!</h3>
+                  <label>
+                    Email
+                    <input class="signUpForm" type="text" name="credentials[email]">
+                  </label>
+                  <label>
+                    Password
+                    <input class="signUpForm" type="password" name="credentials[password]">
+                  </label>
+                  <label>
+                    Password Confirmation
+                    <input class="signUpForm" type="password" name="credentials[password_confirmation]">
+                  </label>
+                  <input type="submit" name="submit" class="mdl-btn" value="Sign up!" id="signUpSubmit">
+                </fieldset>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal fade modal-center" id="signInModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-body">
+              <button type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <form id="sign-in">
+                <fieldset>
+                  <h3 class="modal-btn">Sign in!</h3>
+                  <label>
+                    Email
+                      <input class="signInForm" type="text" name="credentials[email]">
+                  </label>
+                  <label>
+                    Password
+                      <input class="signInForm" type="password" name="credentials[password]">
+                  </label>
+                  <input type="submit" id="signInSubmit" class="mdl-btn" name="submit" value="Sign In!">
+                </fieldset>
+              </form>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <div class="modal fade modal-center" id="changePasswordModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-body">
+              <button type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <form id="change-password">
+                <fieldset>
+                  <h3>Change Password!</h3>
+                  <label>
+                    Old Password
+                      <input class="changePasswordForm" type="password" name="passwords[old]">
+                  </label>
+                  <label>
+                    New Password
+                      <input class="changePasswordForm" type="password" name="passwords[new]">
+                  </label>
+                  <input type="submit" name="submit" class="mdl-btn" value="Change Password">
+                </fieldset>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal fade modal-center" id="create-meal-modal" tabindex="-1" role="dialog" aria-labelledby="Create Meal">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-body">
+              <button id="close-meal-modal" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h3 class="create-meal-title">Create Meal</h3>
+              <form id="create-meal-form">
+                <fieldset>
+                  <label>
+                    Name
+                      <input class="create-meal-form" type="text" name="meal[name]">
+                  </label>
+                  <input type="submit" name="submit" class="mdl-btn" value="Create!">
+                </fieldset>
+              </form>
+              <form id="add-ing-form" class="hide">
+                <label>
+                  Add Ingredient
+                  <input class="create-meal-form" id="ing-name" type="text" name="requirement[id]" readonly>
+                </label>
+                <label>
+                  Quantity
+                  <input class="create-meal-form" id="ing-quant" type="text" name="requirement[quantity]">
+                </label>
+                <button type="submit" class="btn">Add</button>
+                <button type="button" class="btn" id="done-adding">Done Adding</button>
+              </form>
+              <div class="list-ingredients hide">
+                <ul id="current-ingredients"></ul>
+              </div>
+              <div class="ingredients hide">
+              </div>
+              <div class="instructions hide">
+                <form id="instructions-form">
+                  <label>
+                    Instructions
+                    <textarea id="instructions-text" class="create-meal-form" name="meal[instructions]" cols="58" rows="6"></textarea>
+                    <input type="submit" name="submit" class="btn update-instructions" value="Add">
+                  </label>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal fade modal-center" id="show-meal-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-body" id="show-meal-body">
+              <button type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal fade modal-center" id="ingredients-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-body" id="ingredients-body">
+              <button type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <form id="create-ingredient-form">
+                <fieldset>
+                  <h3 class="modal-btn">Add Ingredient</h3>
+                  <label>
+                    Name
+                      <input class="ingredient-form" type="text" name="ingredient[name]">
+                  </label>
+                  <label>
+                    Unit
+                      <input class="ingredient-form" type="text" name="ingredient[unit]">
+                  </label>
+                  <input type="submit" id="ingredient-submit" class="mdl-btn" name="submit" value="Create!">
+                </fieldset>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="user-actions">
+        <button type="button" class="btn" data-toggle="modal" data-target="#signUpModal" id="userSignUp">
+          Sign Up!
+        </button>
+        <button type="button" id="userSignIn" class="btn" data-toggle="modal" data-target="#signInModal">
+          Sign In!
+        </button>
+      </div>
+      <div class="signed-in hide">
+        <button type="button" class="btn" data-toggle="modal" data-target="#changePasswordModal" id="userChangePassword">Change password!</button>
+        <button class="btn btn-danger" type="button" value="Sign Out" id="sign-out">Sign Out!</button>
+        <button class="btn create" type="button" data-toggle="modal" data-target="#create-meal-modal" value="Create-Meal" id="create-meal">Create Meal</button>
+        <button class="btn create" type="button" data-toggle="modal" data-target="#ingredients-modal" value="Create Ingredient" id="create-ingredient-button">Create Ingredient</button>
+      </div>
+      <div class="status-bar">
+        <h3 id="status-bar"></h3>
+      </div>
+      <div class="meals hide">
+        <div class="meal-block">
+          <button type="button" id="index-meals" class="btn">Show all meals</button>
+          <div id="meal-list" class="nav nav-pills nav-stacked">
+          </div>
+        </div>
+        <div class="meal-cards"></div>
+      </div>
+    </body>
+</html>
