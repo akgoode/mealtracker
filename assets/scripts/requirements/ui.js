@@ -1,9 +1,12 @@
 'use strict';
 
+const ingTemplate = require('../templates/add-ing.handlebars');
+
 const createRequirementSuccess = (ingData, reqData) => {
   let ingredient = ingData.ingredient;
   let requirement = reqData.requirement;
-  $('#current-ingredients').append('<li class="new-ing">' + requirement.quantity + ' ' + ingredient.unit + ' of ' + ingredient.name + '</li>');
+  let ing = ingTemplate({ingredient, requirement});
+  $('#current-ingredients').append(ing);
 };
 
 const createRequirementFailure = () => {
